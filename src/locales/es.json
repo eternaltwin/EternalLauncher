@@ -1,0 +1,25 @@
+{
+  "app": {
+    "version": "Versión {version}",
+    "navigation": "Navegación principal"
+  },
+  "nav": {
+    "games": "Juegos",
+    "account": "Cuenta",
+    "settings": "Ajustes"
+  },
+  "games": {
+    "title": "Juegos",
+    "empty": "La lista de juegos llegará pronto."
+  },
+  "account": {
+    "title": "Cuenta",
+    "signedOut": "No has iniciado sesión.",
+    "soon": "El inicio de sesión con una cuenta de EternalTwin llegará pronto. Seguirá siendo opcional."
+  },
+  "settings": {
+    "title": "Ajustes",
+    "language": "Idioma",
+    "systemLanguage": "Idioma del sistema"
+  }
+}

@@ -13,6 +13,30 @@ Le launcher de bureau des jeux EternalTwin, pour Windows, macOS et Linux.
 
 Interface en français, anglais, espagnol, allemand et portugais du Brésil.
 
+## Développer
+
+Le launcher est fait avec [Tauri 2](https://v2.tauri.app/) (Rust) et une interface Vue 3 + TypeScript.
+
+Prérequis :
+- [Node.js](https://nodejs.org/) 24 et [pnpm](https://pnpm.io/) ;
+- [Rust](https://rustup.rs/) stable ;
+- selon le système, les [prérequis de Tauri](https://v2.tauri.app/start/prerequisites/) :
+  - Windows : Build Tools Visual Studio (C++) ;
+  - Linux : `libwebkit2gtk-4.1-dev` et les paquets listés par Tauri ;
+  - macOS : outils en ligne de commande de Xcode.
+
+Commandes :
+
+```sh
+pnpm install          # dépendances
+pnpm tauri dev        # lance le launcher en mode développement
+pnpm test             # tests de l'interface
+pnpm typecheck        # vérification des types
+pnpm tauri build      # installeurs pour le système courant
+```
+
+À chaque pull request, la CI compile le launcher pour Windows, Linux et macOS. Elle joint les installeurs, non signés, à l'exécution correspondante de l'onglet *Actions* pendant 7 jours.
+
 ## Contribuer
 
 La branche `main` est protégée : toute modification passe par une branche et une pull request.
