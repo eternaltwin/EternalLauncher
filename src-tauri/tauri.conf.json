@@ -29,7 +29,13 @@
   },
   "bundle": {
     "active": true,
-    "targets": ["nsis", "app", "dmg", "appimage", "deb"],
+    "targets": [
+      "nsis",
+      "app",
+      "dmg",
+      "appimage",
+      "deb"
+    ],
     "publisher": "EternalTwin",
     "copyright": "EternalTwin",
     "category": "Game",
@@ -48,12 +54,30 @@
     "windows": {
       "nsis": {
         "installMode": "currentUser",
-        "languages": ["English", "French", "Spanish", "German", "PortugueseBR"],
+        "languages": [
+          "English",
+          "French",
+          "Spanish",
+          "German",
+          "PortugueseBR"
+        ],
         "displayLanguageSelector": false
       }
     },
     "macOS": {
       "signingIdentity": "-"
+    },
+    "createUpdaterArtifacts": true
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDQwNTZGNERDQjhGMjdEOTEKUldTUmZmSzQzUFJXUU80WUU3OTF6TDc5MFBXWGpVRWdwUXI0S3k0U3FWUzQ4a3pEZFpPWlpMYlcK",
+      "endpoints": [
+        "https://github.com/eternaltwin/EternalLauncher/releases/latest/download/latest.json"
+      ],
+      "windows": {
+        "installMode": "passive"
+      }
     }
   }
 }

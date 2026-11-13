@@ -63,7 +63,14 @@
     "layoutList": "Rows",
     "layoutGrid": "Grid",
     "alternatives": "Show alternative launches",
-    "alternativesHelp": "Adds for example “Play (DirectX)” to Galaxy 55: only use it if the game does not open with “Play”."
+    "alternativesHelp": "Adds for example “Play (DirectX)” to Galaxy 55: only use it if the game does not open with “Play”.",
+    "updates": "Launcher updates",
+    "checkAtStartup": "Check for updates at startup",
+    "checkNow": "Check for updates",
+    "checking": "Checking…",
+    "upToDate": "EternalLauncher is up to date.",
+    "updateFound": "Version {version} is available: use the banner at the top of the window.",
+    "updateError": "Could not check for updates right now."
   },
   "errors": {
     "generic": "Something went wrong.",
@@ -91,5 +98,12 @@
   },
   "variantsHelp": {
     "directx": "Same game, other graphics engine: use it if the game does not open (PC without OpenGL 3.2, virtual machine)."
+  },
+  "launcherUpdate": {
+    "available": "EternalLauncher {version} is available.",
+    "install": "Install and restart",
+    "notes": "Release notes",
+    "later": "Later",
+    "downloading": "Downloading the update… {percent}%"
   }
 }
