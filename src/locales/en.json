@@ -8,9 +8,28 @@
     "account": "Account",
     "settings": "Settings"
   },
+  "common": {
+    "refresh": "Refresh"
+  },
   "games": {
     "title": "Games",
-    "empty": "The game list is coming soon."
+    "empty": "No games in the catalog.",
+    "loading": "Loading the catalog…",
+    "offline": "Offline catalog: the list may be out of date.",
+    "unavailable": "Not available on this system yet"
+  },
+  "game": {
+    "back": "All games",
+    "versions": "Versions",
+    "loadingVersions": "Looking for versions…",
+    "noVersions": "No version available for this system.",
+    "latest": "Latest",
+    "prerelease": "Pre-release",
+    "published": "Released on {date}",
+    "notes": "Release notes",
+    "noNotes": "No notes for this version.",
+    "source": "View on GitHub",
+    "installSoon": "Installing versions is coming in a future version of the launcher."
   },
   "account": {
     "title": "Account",
@@ -20,6 +39,17 @@
   "settings": {
     "title": "Settings",
     "language": "Language",
-    "systemLanguage": "System language"
+    "systemLanguage": "System language",
+    "gamesLayout": "Game display",
+    "layoutList": "Rows",
+    "layoutGrid": "Grid"
+  },
+  "errors": {
+    "generic": "Something went wrong.",
+    "network": "Could not reach the server. Check your connection.",
+    "rateLimited": "GitHub limits the number of requests. Try again after {time}.",
+    "rateLimitedSoon": "GitHub limits the number of requests. Try again in a few minutes.",
+    "github": "GitHub sent an unexpected answer. Try again later.",
+    "unknownGame": "This game is not in the catalog."
   }
 }

@@ -41,3 +41,70 @@ a {
   outline: 2px solid var(--gold);
   outline-offset: 2px;
 }
+
+/* Éléments communs aux pages. */
+.page-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.page-head h1,
+.page-head h2 {
+  margin: 0;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.notice,
+.error {
+  padding: 10px 14px;
+  border-radius: var(--radius);
+}
+
+.notice {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+
+.error {
+  border: 1px solid var(--accent-strong);
+  background: rgb(209 26 38 / 12%);
+}
+
+.button-ghost {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.button-ghost:hover:not(:disabled) {
+  background: var(--bg-hover);
+}
+
+.button-ghost:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.badge {
+  padding: 1px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.badge-accent {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--text);
+}

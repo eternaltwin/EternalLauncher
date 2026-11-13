@@ -8,9 +8,28 @@
     "account": "Konto",
     "settings": "Einstellungen"
   },
+  "common": {
+    "refresh": "Aktualisieren"
+  },
   "games": {
     "title": "Spiele",
-    "empty": "Die Spieleliste kommt bald."
+    "empty": "Keine Spiele im Katalog.",
+    "loading": "Katalog wird geladen…",
+    "offline": "Offline-Katalog: Die Liste ist eventuell nicht aktuell.",
+    "unavailable": "Auf diesem System noch nicht verfügbar"
+  },
+  "game": {
+    "back": "Alle Spiele",
+    "versions": "Versionen",
+    "loadingVersions": "Versionen werden gesucht…",
+    "noVersions": "Keine Version für dieses System verfügbar.",
+    "latest": "Neueste",
+    "prerelease": "Vorabversion",
+    "published": "Veröffentlicht am {date}",
+    "notes": "Versionshinweise",
+    "noNotes": "Keine Hinweise zu dieser Version.",
+    "source": "Auf GitHub ansehen",
+    "installSoon": "Das Installieren von Versionen kommt in einer späteren Version des Launchers."
   },
   "account": {
     "title": "Konto",
@@ -20,6 +39,17 @@
   "settings": {
     "title": "Einstellungen",
     "language": "Sprache",
-    "systemLanguage": "Systemsprache"
+    "systemLanguage": "Systemsprache",
+    "gamesLayout": "Spieleanzeige",
+    "layoutList": "Als Zeilen",
+    "layoutGrid": "Als Raster"
+  },
+  "errors": {
+    "generic": "Ein Fehler ist aufgetreten.",
+    "network": "Der Server ist nicht erreichbar. Prüfe deine Verbindung.",
+    "rateLimited": "GitHub begrenzt die Anzahl der Anfragen. Versuche es nach {time} erneut.",
+    "rateLimitedSoon": "GitHub begrenzt die Anzahl der Anfragen. Versuche es in ein paar Minuten erneut.",
+    "github": "GitHub hat unerwartet geantwortet. Versuche es später erneut.",
+    "unknownGame": "Dieses Spiel ist nicht im Katalog."
   }
 }

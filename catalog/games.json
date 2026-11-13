@@ -1,0 +1,55 @@
+{
+  "$schema": "./schema.json",
+  "schema": 1,
+  "games": [
+    {
+      "id": "galaxy55",
+      "kind": "native",
+      "name": {
+        "fr": "Galaxy 55"
+      },
+      "description": {
+        "fr": "Le bac à sable spatial en voxels de Motion Twin (2012) : explorez des planètes, minez, construisez et améliorez votre vaisseau. Portage natif non officiel, hors ligne, en version alpha.",
+        "en": "Motion Twin's voxel space sandbox (2012): explore planets, mine, build and upgrade your ship. Unofficial native offline port, in alpha.",
+        "es": "El sandbox espacial de vóxeles de Motion Twin (2012): explora planetas, mina, construye y mejora tu nave. Port nativo no oficial, sin conexión, en fase alfa.",
+        "de": "Die Voxel-Weltraum-Sandbox von Motion Twin (2012): Erkunde Planeten, baue Rohstoffe ab, errichte Bauwerke und verbessere dein Schiff. Inoffizielle native Offline-Portierung im Alpha-Stadium.",
+        "pt-BR": "O sandbox espacial em voxels da Motion Twin (2012): explore planetas, minere, construa e melhore sua nave. Port nativo não oficial, offline, em fase alfa."
+      },
+      "icon": "icons/galaxy55.png",
+      "source": {
+        "type": "github-releases",
+        "repo": "Pv1E/galaxy55-offline",
+        "minVersion": "0.4",
+        "prereleases": true
+      },
+      "platforms": {
+        "windows-x86_64": {
+          "asset": "galaxy55-offline-{tag}.zip",
+          "program": "galaxy55.exe",
+          "args": ["galaxy55.hl"],
+          "variants": [
+            {
+              "id": "directx",
+              "args": ["galaxy55_dx.hl"]
+            }
+          ]
+        },
+        "linux-*": {
+          "asset": "galaxy55-offline-{tag}-linux-mac.zip",
+          "runtime": "hashlink>=1.16",
+          "args": ["galaxy55.hl"]
+        },
+        "macos-*": {
+          "asset": "galaxy55-offline-{tag}-linux-mac.zip",
+          "runtime": "hashlink>=1.16",
+          "args": ["galaxy55.hl"]
+        }
+      },
+      "saves": {
+        "windows": "%APPDATA%/Galaxy55",
+        "linux": "~/Galaxy55",
+        "macos": "~/Galaxy55"
+      }
+    }
+  ]
+}

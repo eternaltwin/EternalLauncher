@@ -1,3 +1,12 @@
+mod catalog;
+mod commands;
+mod error;
+mod github;
+mod http;
+mod platform;
+mod state;
+mod version;
+
 use tauri::Manager;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
@@ -11,6 +20,16 @@ pub fn run() {
             }
         }))
         .plugin(tauri_plugin_opener::init())
+        .setup(|app| {
+            let cache_dir = app.path().app_cache_dir()?;
+            app.manage(state::AppState::new(cache_dir)?);
+            Ok(())
+        })
+        .invoke_handler(tauri::generate_handler![
+            commands::get_catalog,
+            commands::get_game_versions,
+            commands::get_game_icon,
+        ])
         .run(tauri::generate_context!())
         .expect("impossible de démarrer EternalLauncher");
 }

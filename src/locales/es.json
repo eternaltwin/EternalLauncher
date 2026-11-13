@@ -8,9 +8,28 @@
     "account": "Cuenta",
     "settings": "Ajustes"
   },
+  "common": {
+    "refresh": "Actualizar"
+  },
   "games": {
     "title": "Juegos",
-    "empty": "La lista de juegos llegará pronto."
+    "empty": "No hay juegos en el catálogo.",
+    "loading": "Cargando el catálogo…",
+    "offline": "Catálogo sin conexión: puede que la lista no esté actualizada.",
+    "unavailable": "Aún no disponible en este sistema"
+  },
+  "game": {
+    "back": "Todos los juegos",
+    "versions": "Versiones",
+    "loadingVersions": "Buscando versiones…",
+    "noVersions": "No hay ninguna versión disponible para este sistema.",
+    "latest": "Última",
+    "prerelease": "Versión preliminar",
+    "published": "Publicada el {date}",
+    "notes": "Notas de la versión",
+    "noNotes": "No hay notas para esta versión.",
+    "source": "Ver en GitHub",
+    "installSoon": "La instalación de versiones llegará en una próxima versión del launcher."
   },
   "account": {
     "title": "Cuenta",
@@ -20,6 +39,17 @@
   "settings": {
     "title": "Ajustes",
     "language": "Idioma",
-    "systemLanguage": "Idioma del sistema"
+    "systemLanguage": "Idioma del sistema",
+    "gamesLayout": "Visualización de los juegos",
+    "layoutList": "En filas",
+    "layoutGrid": "En cuadrícula"
+  },
+  "errors": {
+    "generic": "Se ha producido un error.",
+    "network": "No se puede contactar con el servidor. Comprueba tu conexión.",
+    "rateLimited": "GitHub limita el número de peticiones. Vuelve a intentarlo después de las {time}.",
+    "rateLimitedSoon": "GitHub limita el número de peticiones. Vuelve a intentarlo en unos minutos.",
+    "github": "GitHub ha respondido de forma inesperada. Vuelve a intentarlo más tarde.",
+    "unknownGame": "Este juego no está en el catálogo."
   }
 }
