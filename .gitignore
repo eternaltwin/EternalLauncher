@@ -1,0 +1,19 @@
+# Dépendances et builds
+node_modules/
+dist/
+target/
+
+# Fichiers générés par Tauri
+src-tauri/gen/schemas/
+
+# Journaux et fichiers locaux
+*.log
+.env
+.env.*
+
+# Éditeurs et systèmes
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
