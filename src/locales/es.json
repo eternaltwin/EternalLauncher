@@ -15,8 +15,9 @@
     "title": "Juegos",
     "empty": "No hay juegos en el catálogo.",
     "loading": "Cargando el catálogo…",
-    "offline": "Catálogo sin conexión: puede que la lista no esté actualizada.",
-    "unavailable": "Aún no disponible en este sistema"
+    "offline": "No se ha podido obtener la lista de juegos en línea: la que se muestra puede no estar actualizada.",
+    "unavailable": "Aún no disponible en este sistema",
+    "updateAvailable": "Actualización disponible"
   },
   "game": {
     "back": "Todos los juegos",
@@ -29,12 +30,30 @@
     "notes": "Notas de la versión",
     "noNotes": "No hay notas para esta versión.",
     "source": "Ver en GitHub",
-    "installSoon": "La instalación de versiones llegará en una próxima versión del launcher."
+    "install": "Instalar",
+    "installed": "Instalada",
+    "downloading": "Descargando… {percent} %",
+    "extracting": "Instalando…",
+    "cancel": "Cancelar",
+    "play": "Jugar",
+    "playWith": "Jugar ({variant})",
+    "playVersion": "Jugar a la {version}",
+    "installVersion": "Instalar la {version}",
+    "running": "Juego en curso…",
+    "folder": "Carpeta",
+    "remove": "Desinstalar",
+    "confirmRemove": "¿Confirmar?",
+    "downgradeTitle": "La {version} es más antigua que la última versión jugada ({lastPlayed}).",
+    "downgradeText": "Las partidas guardadas con una versión más reciente pueden no funcionar aquí: cópialas antes.",
+    "playAnyway": "Jugar de todos modos",
+    "openSaves": "Partidas",
+    "updateAvailable": "Nueva versión disponible: {version}",
+    "update": "Actualizar"
   },
   "account": {
     "title": "Cuenta",
     "signedOut": "No has iniciado sesión.",
-    "soon": "El inicio de sesión con una cuenta de EternalTwin llegará pronto. Seguirá siendo opcional."
+    "soon": "El inicio de sesión con una cuenta de EternalTwin llegará pronto."
   },
   "settings": {
     "title": "Ajustes",
@@ -42,7 +61,9 @@
     "systemLanguage": "Idioma del sistema",
     "gamesLayout": "Visualización de los juegos",
     "layoutList": "En filas",
-    "layoutGrid": "En cuadrícula"
+    "layoutGrid": "En cuadrícula",
+    "alternatives": "Mostrar los lanzamientos alternativos",
+    "alternativesHelp": "Añade por ejemplo «Jugar (DirectX)» a Galaxy 55: úsalo solo si el juego no se abre con «Jugar»."
   },
   "errors": {
     "generic": "Se ha producido un error.",
@@ -50,6 +71,25 @@
     "rateLimited": "GitHub limita el número de peticiones. Vuelve a intentarlo después de las {time}.",
     "rateLimitedSoon": "GitHub limita el número de peticiones. Vuelve a intentarlo en unos minutos.",
     "github": "GitHub ha respondido de forma inesperada. Vuelve a intentarlo más tarde.",
-    "unknownGame": "Este juego no está en el catálogo."
+    "unknownGame": "Este juego no está en el catálogo.",
+    "unknownVersion": "Esta versión ya no se ofrece.",
+    "unavailable": "Este juego no existe para este sistema.",
+    "missingDigest": "GitHub no da la huella de este archivo: no se puede verificar la descarga, así que se rechaza.",
+    "digestMismatch": "El archivo descargado no coincide con el publicado: se ha eliminado. Vuelve a intentarlo.",
+    "badArchive": "El archivo de esta versión no es válido o es peligroso: se ha rechazado.",
+    "busy": "Esta versión ya está instalada o se está instalando.",
+    "notInstalled": "Esta versión no está instalada.",
+    "runtimeMissing": "Se necesita {runtime} {min} o más reciente para lanzar este juego en este sistema. Instálalo (en macOS: brew install hashlink) y vuelve a intentarlo.",
+    "runtimeTooOld": "{runtime} {found} es demasiado antiguo: se necesita la versión {min} o más reciente.",
+    "alreadyRunning": "El juego ya está en marcha.",
+    "launch": "No se puede lanzar el juego.",
+    "noSaves": "Todavía no hay partidas guardadas de este juego.",
+    "io": "Error de acceso a los archivos."
+  },
+  "variants": {
+    "directx": "DirectX"
+  },
+  "variantsHelp": {
+    "directx": "El mismo juego con otro motor gráfico: úsalo si el juego no se abre (PC sin OpenGL 3.2, máquina virtual)."
   }
 }

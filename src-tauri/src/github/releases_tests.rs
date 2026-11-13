@@ -9,6 +9,7 @@ fn releases() -> Vec<Release> {
 fn spec(asset: &str) -> PlatformSpec {
     PlatformSpec {
         asset: asset.to_string(),
+        ..PlatformSpec::default()
     }
 }
 

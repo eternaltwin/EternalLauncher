@@ -34,6 +34,9 @@ pub struct Game {
     pub min_launcher: Option<String>,
     pub source: Source,
     pub platforms: BTreeMap<String, PlatformSpec>,
+    /// Dossier des sauvegardes par système (`windows`, `linux`, `macos`).
+    #[serde(default)]
+    pub saves: BTreeMap<String, String>,
 }
 
 #[derive(Clone, Debug, Deserialize)]
@@ -48,10 +51,25 @@ pub enum Source {
     },
 }
 
-#[derive(Clone, Debug, Deserialize)]
+#[derive(Clone, Debug, Default, Deserialize)]
 pub struct PlatformSpec {
     /// Nom de l'asset de la release, avec `{tag}` ou `{version}`.
     pub asset: String,
+    /// Programme à lancer, relatif au dossier de la version (sans runtime).
+    pub program: Option<String>,
+    /// Runtime à trouver sur la machine, par exemple `hashlink>=1.16`.
+    pub runtime: Option<String>,
+    #[serde(default)]
+    pub args: Vec<String>,
+    #[serde(default)]
+    pub variants: Vec<Variant>,
+}
+
+/// Autre façon de lancer le jeu (DirectX…) : d'autres arguments.
+#[derive(Clone, Debug, Deserialize, Serialize, PartialEq, Eq)]
+pub struct Variant {
+    pub id: String,
+    pub args: Vec<String>,
 }
 
 impl PlatformSpec {
@@ -71,6 +89,7 @@ mod tests {
     fn remplace_tag_et_version_dans_le_nom_de_l_asset() {
         let spec = PlatformSpec {
             asset: "jeu-{tag}-{version}.zip".to_string(),
+            ..PlatformSpec::default()
         };
         assert_eq!(spec.asset_name("v0.8"), "jeu-v0.8-0.8.zip");
     }

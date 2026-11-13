@@ -1,3 +1,4 @@
+use super::launch_rules::{check_launch, check_saves};
 use super::model::{Catalog, Game, RawCatalog, Source};
 use crate::error::AppError;
 use crate::version::parse_version;
@@ -104,7 +105,9 @@ fn check_game(game: &Game) -> Result<(), String> {
                 game.id
             ));
         }
+        check_launch(key, spec).map_err(|e| format!("{}: {e}", game.id))?;
     }
+    check_saves(&game.saves).map_err(|e| format!("{}: {e}", game.id))?;
     Ok(())
 }
 

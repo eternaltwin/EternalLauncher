@@ -9,6 +9,8 @@
   --accent: #b62226;
   --accent-strong: #d11a26;
   --gold: #feb500;
+  --green: #3fb36b;
+  --orange: #f08c00;
   --radius: 8px;
   color-scheme: dark;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -107,4 +109,25 @@ a {
   border-color: var(--accent);
   background: var(--accent);
   color: var(--text);
+}
+
+/* Même taille que .button-ghost : seule la couleur le distingue. */
+.button-primary {
+  padding: 6px 14px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.button-primary:hover:not(:disabled) {
+  border-color: var(--accent-strong);
+  background: var(--accent-strong);
+}
+
+.button-primary:disabled {
+  opacity: 0.6;
+  cursor: default;
 }

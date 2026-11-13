@@ -15,8 +15,9 @@
     "title": "Games",
     "empty": "No games in the catalog.",
     "loading": "Loading the catalog…",
-    "offline": "Offline catalog: the list may be out of date.",
-    "unavailable": "Not available on this system yet"
+    "offline": "The game list could not be fetched online: the one shown may be out of date.",
+    "unavailable": "Not available on this system yet",
+    "updateAvailable": "Update available"
   },
   "game": {
     "back": "All games",
@@ -29,12 +30,30 @@
     "notes": "Release notes",
     "noNotes": "No notes for this version.",
     "source": "View on GitHub",
-    "installSoon": "Installing versions is coming in a future version of the launcher."
+    "install": "Install",
+    "installed": "Installed",
+    "downloading": "Downloading… {percent}%",
+    "extracting": "Installing…",
+    "cancel": "Cancel",
+    "play": "Play",
+    "playWith": "Play ({variant})",
+    "playVersion": "Play {version}",
+    "installVersion": "Install {version}",
+    "running": "Game running…",
+    "folder": "Folder",
+    "remove": "Uninstall",
+    "confirmRemove": "Confirm?",
+    "downgradeTitle": "{version} is older than the last version you played ({lastPlayed}).",
+    "downgradeText": "Saves made with a newer version may not work here: consider copying them first.",
+    "playAnyway": "Play anyway",
+    "openSaves": "Saves",
+    "updateAvailable": "New version available: {version}",
+    "update": "Update"
   },
   "account": {
     "title": "Account",
     "signedOut": "You are not signed in.",
-    "soon": "Signing in with an EternalTwin account is coming soon. It will stay optional."
+    "soon": "Signing in with an EternalTwin account is coming soon."
   },
   "settings": {
     "title": "Settings",
@@ -42,7 +61,9 @@
     "systemLanguage": "System language",
     "gamesLayout": "Game display",
     "layoutList": "Rows",
-    "layoutGrid": "Grid"
+    "layoutGrid": "Grid",
+    "alternatives": "Show alternative launches",
+    "alternativesHelp": "Adds for example “Play (DirectX)” to Galaxy 55: only use it if the game does not open with “Play”."
   },
   "errors": {
     "generic": "Something went wrong.",
@@ -50,6 +71,25 @@
     "rateLimited": "GitHub limits the number of requests. Try again after {time}.",
     "rateLimitedSoon": "GitHub limits the number of requests. Try again in a few minutes.",
     "github": "GitHub sent an unexpected answer. Try again later.",
-    "unknownGame": "This game is not in the catalog."
+    "unknownGame": "This game is not in the catalog.",
+    "unknownVersion": "This version is no longer offered.",
+    "unavailable": "This game is not available for this system.",
+    "missingDigest": "GitHub gives no checksum for this file: the download cannot be verified, so it is refused.",
+    "digestMismatch": "The downloaded file does not match the published one: it was deleted. Try again.",
+    "badArchive": "The archive of this version is invalid or unsafe: it was refused.",
+    "busy": "This version is already installed or being installed.",
+    "notInstalled": "This version is not installed.",
+    "runtimeMissing": "{runtime} {min} or newer is needed to run this game on this system. Install it (on macOS: brew install hashlink), then try again.",
+    "runtimeTooOld": "{runtime} {found} is too old: version {min} or newer is needed.",
+    "alreadyRunning": "The game is already running.",
+    "launch": "Could not start the game.",
+    "noSaves": "No saves for this game yet.",
+    "io": "File access error."
+  },
+  "variants": {
+    "directx": "DirectX"
+  },
+  "variantsHelp": {
+    "directx": "Same game, other graphics engine: use it if the game does not open (PC without OpenGL 3.2, virtual machine)."
   }
 }

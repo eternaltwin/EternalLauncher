@@ -3,12 +3,15 @@ import { computed, toRef } from "vue";
 import { useI18n } from "vue-i18n";
 import type { GameSummary } from "../api/launcher";
 import { useGameIcon } from "../composables/useGameIcon";
+import { useUpdateAvailable } from "../composables/useUpdateAvailable";
 import type { GamesLayout } from "../gamesLayout";
 import { pickLocalized } from "../localized";
 
 const props = defineProps<{ game: GameSummary; layout: GamesLayout }>();
 const { locale } = useI18n();
-const icon = useGameIcon(toRef(() => props.game.id));
+const id = toRef(() => props.game.id);
+const icon = useGameIcon(id);
+const update = useUpdateAvailable(id);
 const name = computed(() => pickLocalized(props.game.name, locale.value));
 const description = computed(() => pickLocalized(props.game.description, locale.value));
 </script>
@@ -21,6 +24,7 @@ const description = computed(() => pickLocalized(props.game.description, locale.
       <div class="title">
         <h2>{{ name }}</h2>
         <span v-if="!game.available" class="badge">{{ $t("games.unavailable") }}</span>
+        <span v-if="update" class="badge badge-update">{{ $t("games.updateAvailable") }}</span>
       </div>
       <p class="description">{{ description }}</p>
     </div>
@@ -102,6 +106,11 @@ h2 {
 
 .grid .description {
   -webkit-line-clamp: 3;
+}
+
+.badge-update {
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
 .chevron {

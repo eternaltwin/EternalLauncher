@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { useGamesLayout } from "../composables/useGamesLayout";
+import { useShowAlternatives } from "../composables/useShowAlternatives";
 import type { GamesLayout } from "../gamesLayout";
 import {
   detectLocale,
@@ -14,6 +15,7 @@ import {
 
 const { locale } = useI18n();
 const layout = useGamesLayout();
+const showAlternatives = useShowAlternatives();
 const layouts: { value: GamesLayout; label: string }[] = [
   { value: "list", label: "settings.layoutList" },
   { value: "grid", label: "settings.layoutGrid" },
@@ -50,6 +52,13 @@ function onLanguageChange(): void {
         </label>
       </div>
     </fieldset>
+    <div class="field wide">
+      <label class="choice">
+        <input v-model="showAlternatives" type="checkbox" />
+        {{ $t("settings.alternatives") }}
+      </label>
+      <p class="help">{{ $t("settings.alternativesHelp") }}</p>
+    </div>
   </section>
 </template>
 
@@ -72,6 +81,10 @@ function onLanguageChange(): void {
   margin: 0;
   padding: 0;
   border: none;
+}
+
+.field.wide {
+  max-width: 520px;
 }
 
 legend {
@@ -107,6 +120,12 @@ select {
 
 .choice:has(input:checked) {
   border-color: var(--accent);
+}
+
+.help {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
 .choice input {

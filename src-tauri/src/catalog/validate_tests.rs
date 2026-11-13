@@ -12,7 +12,7 @@ fn game(overrides: serde_json::Value) -> serde_json::Value {
         "description": { "fr": "Un jeu." },
         "icon": "icons/jeu.png",
         "source": { "type": "github-releases", "repo": "proprio/jeu" },
-        "platforms": { "windows-x86_64": { "asset": "jeu-{tag}.zip", "args": [] } }
+        "platforms": { "windows-x86_64": { "asset": "jeu-{tag}.zip", "program": "jeu.exe", "args": [] } }
     });
     for (key, value) in overrides.as_object().unwrap() {
         base[key] = value.clone();
@@ -85,8 +85,10 @@ fn refuse_les_chemins_et_depots_dangereux() {
         json!({ "icon": "icons/../../x.png" }),
         json!({ "source": { "type": "github-releases", "repo": "a/../b" } }),
         json!({ "source": { "type": "github-releases", "repo": "a/b?x=1" } }),
-        json!({ "platforms": { "windows-x86_64": { "asset": "fixe.zip" } } }),
-        json!({ "platforms": { "beos-x86_64": { "asset": "{tag}.zip" } } }),
+        json!({ "platforms": { "windows-x86_64": { "asset": "fixe.zip", "program": "jeu.exe" } } }),
+        json!({ "platforms": { "windows-x86_64": { "asset": "{tag}.zip", "program": "../jeu.exe" } } }),
+        json!({ "saves": { "windows": "C:/Windows" } }),
+        json!({ "platforms": { "beos-x86_64": { "asset": "{tag}.zip", "program": "jeu.exe" } } }),
         json!({ "name": { "klingon": "Jeu" } }),
     ] {
         let text = catalog(vec![game(bad.clone())]);
