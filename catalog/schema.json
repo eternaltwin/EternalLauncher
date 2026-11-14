@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/eternaltwin/EternalLauncher/main/catalog/schema.json",
+  "title": "Catalogue des jeux d'EternalLauncher",
+  "type": "object",
+  "required": ["schema", "games"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema": { "const": 1, "description": "Version du format du catalogue." },
+    "games": { "type": "array", "items": { "$ref": "#/$defs/game" } }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "localized": {
+      "type": "object",
+      "description": "Texte par langue (fr, en, es, de, pt-BR). Il en faut au moins une.",
+      "minProperties": 1,
+      "propertyNames": { "enum": ["fr", "en", "es", "de", "pt-BR"] },
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "game": {
+      "type": "object",
+      "required": ["id", "kind", "name", "description", "icon", "source", "platforms"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "description": "Identifiant stable : il nomme aussi le dossier d'installation." },
+        "kind": { "enum": ["native"], "description": "native : télécharger depuis les releases GitHub, puis lancer." },
+        "name": { "$ref": "#/$defs/localized" },
+        "description": { "$ref": "#/$defs/localized" },
+        "icon": { "type": "string", "pattern": "^icons/[a-z0-9-]+\\.(png|jpg|webp|svg)$", "description": "Chemin de l'icône, relatif au dossier catalog/." },
+        "minLauncher": { "type": "string", "description": "Version minimale du launcher. Un launcher plus ancien ignore l'entrée." },
+        "source": { "$ref": "#/$defs/source" },
+        "platforms": {
+          "type": "object",
+          "description": "Clé = système-architecture (windows-x86_64, linux-x86_64, macos-aarch64…), « * » pour toute architecture.",
+          "minProperties": 1,
+          "propertyNames": { "pattern": "^(windows|linux|macos)-(x86_64|aarch64|\\*)$" },
+          "additionalProperties": { "$ref": "#/$defs/platform" }
+        },
+        "saves": {
+          "type": "object",
+          "description": "Dossier des sauvegardes du jeu, par système.",
+          "propertyNames": { "enum": ["windows", "linux", "macos"] },
+          "additionalProperties": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": ["type", "repo"],
+      "properties": {
+        "type": { "const": "github-releases" },
+        "repo": { "type": "string", "pattern": "^[A-Za-z0-9-]+/[A-Za-z0-9._-]+$" },
+        "minVersion": { "type": "string", "description": "Première version proposée (les plus anciennes sont ignorées)." },
+        "prereleases": { "type": "boolean", "default": false }
+      },
+      "additionalProperties": false
+    },
+    "platform": {
+      "type": "object",
+      "required": ["asset", "args"],
+      "properties": {
+        "asset": { "type": "string", "pattern": "\\{(tag|version)\\}", "description": "Nom de l'asset de la release ; {tag} = tag GitHub (v0.8), {version} = tag sans le « v »." },
+        "program": { "type": "string", "description": "Programme à lancer, relatif au dossier de la version." },
+        "runtime": { "type": "string", "description": "Runtime requis sur la machine, par exemple hashlink>=1.16." },
+        "args": { "type": "array", "items": { "type": "string" } },
+        "variants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "args"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+              "args": { "type": "array", "items": { "type": "string" } }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

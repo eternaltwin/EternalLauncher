@@ -5,9 +5,3 @@
     <p class="muted">{{ $t("account.soon") }}</p>
   </section>
 </template>
-
-<style scoped>
-.muted {
-  color: var(--text-muted);
-}
-</style>
