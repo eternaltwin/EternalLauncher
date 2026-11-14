@@ -1,0 +1,25 @@
+{
+  "app": {
+    "version": "Version {version}",
+    "navigation": "Main navigation"
+  },
+  "nav": {
+    "games": "Games",
+    "account": "Account",
+    "settings": "Settings"
+  },
+  "games": {
+    "title": "Games",
+    "empty": "The game list is coming soon."
+  },
+  "account": {
+    "title": "Account",
+    "signedOut": "You are not signed in.",
+    "soon": "Signing in with an EternalTwin account is coming soon. It will stay optional."
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "systemLanguage": "System language"
+  }
+}
