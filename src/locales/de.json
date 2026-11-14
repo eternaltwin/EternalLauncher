@@ -63,7 +63,14 @@
     "layoutList": "Als Zeilen",
     "layoutGrid": "Als Raster",
     "alternatives": "Alternative Startarten anzeigen",
-    "alternativesHelp": "Fügt z. B. „Spielen (DirectX)“ zu Galaxy 55 hinzu: nur nutzen, wenn das Spiel mit „Spielen“ nicht startet."
+    "alternativesHelp": "Fügt z. B. „Spielen (DirectX)“ zu Galaxy 55 hinzu: nur nutzen, wenn das Spiel mit „Spielen“ nicht startet.",
+    "updates": "Launcher-Updates",
+    "checkAtStartup": "Beim Start nach Updates suchen",
+    "checkNow": "Nach Updates suchen",
+    "checking": "Wird gesucht…",
+    "upToDate": "EternalLauncher ist aktuell.",
+    "updateFound": "Version {version} ist verfügbar: Nutze den Hinweis oben im Fenster.",
+    "updateError": "Updates können gerade nicht geprüft werden."
   },
   "errors": {
     "generic": "Ein Fehler ist aufgetreten.",
@@ -91,5 +98,12 @@
   },
   "variantsHelp": {
     "directx": "Dasselbe Spiel mit anderer Grafik-Engine: nutze sie, wenn das Spiel nicht startet (PC ohne OpenGL 3.2, virtuelle Maschine)."
+  },
+  "launcherUpdate": {
+    "available": "EternalLauncher {version} ist verfügbar.",
+    "install": "Installieren und neu starten",
+    "notes": "Versionshinweise",
+    "later": "Später",
+    "downloading": "Update wird heruntergeladen… {percent} %"
   }
 }

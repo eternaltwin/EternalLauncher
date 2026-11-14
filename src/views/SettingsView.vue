@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
+import LauncherUpdateSettings from "../components/LauncherUpdateSettings.vue";
 import { useGamesLayout } from "../composables/useGamesLayout";
 import { useShowAlternatives } from "../composables/useShowAlternatives";
 import type { GamesLayout } from "../gamesLayout";
@@ -59,6 +60,7 @@ function onLanguageChange(): void {
       </label>
       <p class="help">{{ $t("settings.alternativesHelp") }}</p>
     </div>
+    <LauncherUpdateSettings />
   </section>
 </template>
 

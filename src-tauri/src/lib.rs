@@ -23,6 +23,9 @@ pub fn run() {
             }
         }))
         .plugin(tauri_plugin_opener::init())
+        .plugin(tauri_plugin_process::init())
+        // Mises à jour du launcher : vérifiées par l'interface, installées seulement à la demande du joueur.
+        .plugin(tauri_plugin_updater::Builder::new().build())
         .setup(|app| {
             let paths = app.path();
             let state = state::AppState::new(
