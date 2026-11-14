@@ -4,6 +4,10 @@ Toutes les évolutions notables d'EternalLauncher. Le format suit [Keep a Change
 
 ## [Non publié]
 
+## [0.1.0] - 2026-11-14
+
+Première version.
+
 ### Ajouté
 
 - Application de bureau pour Windows, macOS et Linux, en français, anglais, espagnol, allemand et portugais du Brésil.
@@ -13,3 +17,6 @@ Toutes les évolutions notables d'EternalLauncher. Le format suit [Keep a Change
 - Proposition de mise à jour quand une version plus récente que celles installées existe, et avertissement avant de lancer une version plus ancienne que la dernière jouée.
 - Lancements alternatifs (DirectX pour Galaxy 55), à activer dans les Réglages.
 - Mise à jour du launcher lui-même depuis les releases de ce dépôt : signée, et installée seulement quand le joueur le demande.
+
+[Non publié]: https://github.com/eternaltwin/EternalLauncher/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/eternaltwin/EternalLauncher/releases/tag/v0.1.0
