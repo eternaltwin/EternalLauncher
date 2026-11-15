@@ -8,18 +8,102 @@
     "account": "Conta",
     "settings": "Configurações"
   },
+  "common": {
+    "refresh": "Atualizar"
+  },
   "games": {
     "title": "Jogos",
-    "empty": "A lista de jogos chega em breve."
+    "empty": "Nenhum jogo no catálogo.",
+    "loading": "Carregando o catálogo…",
+    "offline": "Não foi possível obter a lista de jogos online: a exibida pode estar desatualizada.",
+    "unavailable": "Ainda não disponível neste sistema",
+    "updateAvailable": "Atualização disponível"
+  },
+  "game": {
+    "back": "Todos os jogos",
+    "versions": "Versões",
+    "loadingVersions": "Procurando versões…",
+    "noVersions": "Nenhuma versão disponível para este sistema.",
+    "latest": "Mais recente",
+    "prerelease": "Pré-lançamento",
+    "published": "Lançada em {date}",
+    "notes": "Notas da versão",
+    "noNotes": "Sem notas para esta versão.",
+    "source": "Ver no GitHub",
+    "install": "Instalar",
+    "installed": "Instalada",
+    "downloading": "Baixando… {percent}%",
+    "extracting": "Instalando…",
+    "cancel": "Cancelar",
+    "play": "Jogar",
+    "playWith": "Jogar ({variant})",
+    "playVersion": "Jogar a {version}",
+    "installVersion": "Instalar a {version}",
+    "running": "Jogo em execução…",
+    "folder": "Pasta",
+    "remove": "Desinstalar",
+    "confirmRemove": "Confirmar?",
+    "downgradeTitle": "A {version} é mais antiga que a última versão jogada ({lastPlayed}).",
+    "downgradeText": "Os saves feitos com uma versão mais recente podem não funcionar aqui: copie-os antes.",
+    "playAnyway": "Jogar mesmo assim",
+    "openSaves": "Saves",
+    "updateAvailable": "Nova versão disponível: {version}",
+    "update": "Atualizar"
   },
   "account": {
     "title": "Conta",
     "signedOut": "Você não está conectado.",
-    "soon": "O login com uma conta EternalTwin chega em breve. Ele continuará opcional."
+    "soon": "O login com uma conta EternalTwin chega em breve."
   },
   "settings": {
     "title": "Configurações",
     "language": "Idioma",
-    "systemLanguage": "Idioma do sistema"
+    "systemLanguage": "Idioma do sistema",
+    "gamesLayout": "Exibição dos jogos",
+    "layoutList": "Em linhas",
+    "layoutGrid": "Em grade",
+    "alternatives": "Mostrar inicializações alternativas",
+    "alternativesHelp": "Adiciona, por exemplo, “Jogar (DirectX)” ao Galaxy 55: use só se o jogo não abrir com “Jogar”.",
+    "updates": "Atualizações do launcher",
+    "checkAtStartup": "Procurar atualizações ao iniciar",
+    "checkNow": "Procurar atualização",
+    "checking": "Procurando…",
+    "upToDate": "O EternalLauncher está atualizado.",
+    "updateFound": "A versão {version} está disponível: use o aviso no topo da janela.",
+    "updateError": "Não foi possível verificar as atualizações agora."
+  },
+  "errors": {
+    "generic": "Ocorreu um erro.",
+    "network": "Não foi possível acessar o servidor. Verifique sua conexão.",
+    "rateLimited": "O GitHub limita o número de solicitações. Tente novamente depois das {time}.",
+    "rateLimitedSoon": "O GitHub limita o número de solicitações. Tente novamente em alguns minutos.",
+    "github": "O GitHub respondeu de forma inesperada. Tente novamente mais tarde.",
+    "unknownGame": "Este jogo não está no catálogo.",
+    "unknownVersion": "Esta versão não é mais oferecida.",
+    "unavailable": "Este jogo não existe para este sistema.",
+    "missingDigest": "O GitHub não informa a soma de verificação deste arquivo: o download não pode ser verificado e foi recusado.",
+    "digestMismatch": "O arquivo baixado não corresponde ao publicado: ele foi apagado. Tente novamente.",
+    "badArchive": "O arquivo desta versão é inválido ou perigoso: ele foi recusado.",
+    "busy": "Esta versão já está instalada ou sendo instalada.",
+    "notInstalled": "Esta versão não está instalada.",
+    "runtimeMissing": "É necessário o {runtime} {min} ou mais recente para abrir este jogo neste sistema. Instale-o (no macOS: brew install hashlink) e tente novamente.",
+    "runtimeTooOld": "O {runtime} {found} é antigo demais: é necessária a versão {min} ou mais recente.",
+    "alreadyRunning": "O jogo já está aberto.",
+    "launch": "Não foi possível abrir o jogo.",
+    "noSaves": "Ainda não há saves deste jogo.",
+    "io": "Erro de acesso aos arquivos."
+  },
+  "variants": {
+    "directx": "DirectX"
+  },
+  "variantsHelp": {
+    "directx": "O mesmo jogo com outro motor gráfico: use se o jogo não abrir (PC sem OpenGL 3.2, máquina virtual)."
+  },
+  "launcherUpdate": {
+    "available": "O EternalLauncher {version} está disponível.",
+    "install": "Instalar e reiniciar",
+    "notes": "Notas da versão",
+    "later": "Mais tarde",
+    "downloading": "Baixando a atualização… {percent}%"
   }
 }

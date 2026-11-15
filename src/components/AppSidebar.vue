@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { getVersion } from "@tauri-apps/api/app";
 import { onMounted, ref } from "vue";
+import { useRoute } from "vue-router";
 import logo from "../assets/logo.svg";
 
+const route = useRoute();
 const version = ref<string | null>(null);
 
 const links = [
@@ -27,7 +29,14 @@ onMounted(async () => {
       <span>EternalLauncher</span>
     </div>
     <nav :aria-label="$t('app.navigation')">
-      <RouterLink v-for="link in links" :key="link.to" :to="link.to" class="link">
+      <!-- La fiche d'un jeu (/games/…) garde « Jeux » en surbrillance. -->
+      <RouterLink
+        v-for="link in links"
+        :key="link.to"
+        :to="link.to"
+        class="link"
+        :class="{ active: route.path.startsWith(link.to) }"
+      >
         {{ $t(link.label) }}
       </RouterLink>
     </nav>
@@ -74,7 +83,7 @@ nav {
   background: var(--bg-hover);
 }
 
-.link.router-link-active {
+.link.active {
   background: var(--accent);
 }
 

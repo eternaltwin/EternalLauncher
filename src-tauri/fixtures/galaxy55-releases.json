@@ -1,0 +1,226 @@
+[
+  {
+    "tag_name": "v0.8.1",
+    "name": "v0.8.1",
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-11-13T10:41:05Z",
+    "html_url": "https://github.com/Pv1E/galaxy55-offline/releases/tag/v0.8.1",
+    "body": "## Galaxy 55 (offline) v0.8.1\r\n\r\nEverything new since v0.8, by **Cornor923** (PRs 116-125). v0.8 saves still work.\r\n\r\n- **Inventory screen:** in adventure, I (or R3) opens a panel with the 10 slots of",
+    "assets": [
+      {
+        "name": "galaxy55-offline-v0.8.1-linux-mac.zip",
+        "size": 3189080,
+        "digest": "sha256:6757d02cd084fe8ccadd91c0b0492ac586e2afa9597923a2a1f4e034f2cc0899",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.8.1/galaxy55-offline-v0.8.1-linux-mac.zip"
+      },
+      {
+        "name": "galaxy55-offline-v0.8.1.zip",
+        "size": 8698567,
+        "digest": "sha256:584f462e63733bf797fd88ec2d4956e4eab6d2a4d5fa55aba2aa1c1c4189ec4c",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.8.1/galaxy55-offline-v0.8.1.zip"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.8",
+    "name": "Galaxy 55 (offline) v0.8",
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-11-11T15:21:21Z",
+    "html_url": "https://github.com/Pv1E/galaxy55-offline/releases/tag/v0.8",
+    "body": "## Galaxy 55 (offline) v0.8 â€” novedades\r\n\r\nLa versiÃ³n 0.8 del port nativo **no oficial** de Galaxy 55 (Motion Twin, 2012) ya estÃ¡ aquÃ­. Sin Flash, sin navegador y sin servidor.\r\n\r\n**CÃ³mo jugar (",
+    "assets": [
+      {
+        "name": "galaxy55-offline-v0.8-linux-mac.zip",
+        "size": 3151825,
+        "digest": "sha256:67038f02279e99b6d31f6988ae77ffc5a0c5c657bf60810073a4a13e6c78cda0",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.8/galaxy55-offline-v0.8-linux-mac.zip"
+      },
+      {
+        "name": "galaxy55-offline-v0.8.zip",
+        "size": 8625079,
+        "digest": "sha256:f867240e13cd64c8be36af1387bcf3d94f0243bb44ff2157851c83e9a8f4f68c",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.8/galaxy55-offline-v0.8.zip"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.7",
+    "name": "Galaxy 55 (offline) v0.7",
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-11-06T11:33:06Z",
+    "html_url": "https://github.com/Pv1E/galaxy55-offline/releases/tag/v0.7",
+    "body": "## Galaxy 55 (offline) v0.7 â€” novedades\r\n\r\nLa versiÃ³n 0.7 del port nativo **no oficial** de Galaxy 55 (Motion Twin, 2012) ya estÃ¡ aquÃ­. Sin Flash, sin navegador y sin servidor.\r\n\r\n**CÃ³mo jugar (",
+    "assets": [
+      {
+        "name": "galaxy55-offline-v0.7-linux-mac.zip",
+        "size": 2968753,
+        "digest": "sha256:f6ad2e9c7f61d680a9402d6fdf47b6204aa0a74c9d92c2e6bf778007f6c3f0d7",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.7/galaxy55-offline-v0.7-linux-mac.zip"
+      },
+      {
+        "name": "galaxy55-offline-v0.7.zip",
+        "size": 8395806,
+        "digest": "sha256:204b4db2797dd251b85367bdc83de5542f2379fc244b2b6c4123af4c5e53139f",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.7/galaxy55-offline-v0.7.zip"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.6",
+    "name": "Galaxy 55 (offline) v0.6",
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-11-02T11:33:04Z",
+    "html_url": "https://github.com/Pv1E/galaxy55-offline/releases/tag/v0.6",
+    "body": "## Galaxy 55 (offline) v0.6 â€” port nativo para Windows (y Linux/macOS con HashLink)\r\n\r\nPort **no oficial** de Galaxy 55 (Motion Twin, 2012) a una aplicaciÃ³n nativa (Haxe + Heaps + HashLink). Sin Fl",
+    "assets": [
+      {
+        "name": "galaxy55-offline-v0.6-linux-mac.zip",
+        "size": 2841551,
+        "digest": "sha256:15c1fc7657820da634f4a479f09fdb0c82f18ba5fc47c108adcd1c2d6550cec4",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.6/galaxy55-offline-v0.6-linux-mac.zip"
+      },
+      {
+        "name": "galaxy55-offline-v0.6.zip",
+        "size": 8147493,
+        "digest": "sha256:dc8499698d95a683576f8f905ca90e98fbb92edc58111a92a737f4f4e6c74ce1",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.6/galaxy55-offline-v0.6.zip"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.5",
+    "name": "Galaxy 55 (offline) v0.5",
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-10-23T21:34:37Z",
+    "html_url": "https://github.com/Pv1E/galaxy55-offline/releases/tag/v0.5",
+    "body": "## Galaxy 55 (offline) v0.5 â€” port nativo para Windows (y Linux/macOS con HashLink)\r\n\r\nPort **no oficial** de Galaxy 55 (Motion Twin, 2012) a una aplicaciÃ³n nativa (Haxe + Heaps + HashLink). Sin Fl",
+    "assets": [
+      {
+        "name": "galaxy55-offline-v0.5-linux-mac.zip",
+        "size": 2828231,
+        "digest": "sha256:fd5a87fce887d015889ad077dc86978c26ab444db5babf61239f903188da11e3",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.5/galaxy55-offline-v0.5-linux-mac.zip"
+      },
+      {
+        "name": "galaxy55-offline-v0.5.zip",
+        "size": 8124191,
+        "digest": "sha256:370d07f0b3b81e6d3a66162364dd59f06f5fe3f5b4ca197a35912881236a77a1",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.5/galaxy55-offline-v0.5.zip"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.4",
+    "name": "Galaxy 55 (offline) v0.4",
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-10-20T17:20:48Z",
+    "html_url": "https://github.com/Pv1E/galaxy55-offline/releases/tag/v0.4",
+    "body": "## Galaxy 55 (offline) v0.4 â€” port nativo para Windows (y Linux/macOS con HashLink)\r\n\r\nPort **no oficial** de Galaxy 55 (Motion Twin, 2012) a una aplicaciÃ³n nativa (Haxe + Heaps + HashLink). Sin Fl",
+    "assets": [
+      {
+        "name": "galaxy55-offline-v0.4-linux-mac.zip",
+        "size": 2772811,
+        "digest": "sha256:910fab87de48c7c05d369c72915c665869c6a81c01fc9c20261b2dab06901f0b",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.4/galaxy55-offline-v0.4-linux-mac.zip"
+      },
+      {
+        "name": "galaxy55-offline-v0.4.zip",
+        "size": 8011314,
+        "digest": "sha256:69da3fc35ce6991f48da857524eed66a95537c4ff6102e677a1b3d97e75fe4ff",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.4/galaxy55-offline-v0.4.zip"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.3.1",
+    "name": "Galaxy 55 offline v0.3.1",
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-10-17T21:50:52Z",
+    "html_url": "https://github.com/Pv1E/galaxy55-offline/releases/tag/v0.3.1",
+    "body": "## Galaxy 55 (offline) v0.3.1 â€” port nativo para Windows (y Linux/macOS con HashLink)\r\n\r\nPort **no oficial** de Galaxy 55 (Motion Twin, 2012) a una aplicaciÃ³n nativa (Haxe + Heaps + HashLink). Sin ",
+    "assets": [
+      {
+        "name": "galaxy55-offline-v0.3.1-linux-mac.zip",
+        "size": 2743393,
+        "digest": "sha256:f250edc71881b78d3417f38cc423145378e8677a6dec440729df9947198e6711",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.3.1/galaxy55-offline-v0.3.1-linux-mac.zip"
+      },
+      {
+        "name": "galaxy55-offline-v0.3.1.zip",
+        "size": 7713692,
+        "digest": "sha256:92323df0a150a3ed121ba3cdf5af8d000356f988ed9c2306a87579861483aca6",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.3.1/galaxy55-offline-v0.3.1.zip"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.3",
+    "name": "Galaxy 55 offline v0.3",
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-10-17T04:36:05Z",
+    "html_url": "https://github.com/Pv1E/galaxy55-offline/releases/tag/v0.3",
+    "body": "## Galaxy 55 (offline) v0.3 â€” port nativo para Windows (y Linux/macOS con HashLink)\r\n\r\nPort **no oficial** de Galaxy 55 (Motion Twin, 2012) a una aplicaciÃ³n nativa (Haxe + Heaps + HashLink). Sin Fl",
+    "assets": [
+      {
+        "name": "galaxy55-offline-v0.3-linux-mac.zip",
+        "size": 2742312,
+        "digest": "sha256:fc38058053f86f1b0537d25a5cf875b1f0de382138e4065c1a940e5fc31864d5",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.3/galaxy55-offline-v0.3-linux-mac.zip"
+      },
+      {
+        "name": "galaxy55-offline-v0.3.zip",
+        "size": 7645506,
+        "digest": "sha256:79fa7e7e0e31f710d32e2f867cb30ae5df3e350c34019cd8f03520b4534acad4",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.3/galaxy55-offline-v0.3.zip"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.2",
+    "name": "Galaxy 55 offline v0.2",
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-10-16T13:17:33Z",
+    "html_url": "https://github.com/Pv1E/galaxy55-offline/releases/tag/v0.2",
+    "body": "**EspaÃ±ol** Â· [English](#english)\r\n\r\n## Galaxy 55 (offline) v0.2 â€” port nativo\r\n\r\nPort **no oficial** de Galaxy 55 (Motion Twin, 2012) a una aplicaciÃ³n nativa (Haxe + Heaps + HashLink). Sin Flash",
+    "assets": [
+      {
+        "name": "galaxy55-offline-v0.2-linux-mac.zip",
+        "size": 2472868,
+        "digest": "sha256:2bdb5772fcc006d3d1a20d6d6ccc61da77601c7608e313248f8d1c07bbae3f53",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.2/galaxy55-offline-v0.2-linux-mac.zip"
+      },
+      {
+        "name": "galaxy55-offline-v0.2.zip",
+        "size": 6107911,
+        "digest": "sha256:8d3c1a058037f2896750d0fc4b25fe7866cc12a7c9a8f798826c19f4e3b65e08",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.2/galaxy55-offline-v0.2.zip"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.1",
+    "name": "Galaxy 55 offline - versiÃ³n 0.1 (port nativo para Windows)",
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-10-15T15:40:51Z",
+    "html_url": "https://github.com/Pv1E/galaxy55-offline/releases/tag/v0.1",
+    "body": "## Galaxy 55 (offline) â€” port nativo para Windows\r\n\r\nPort **no oficial** de Galaxy 55 (Motion Twin, 2012) a una aplicaciÃ³n nativa para Windows (Haxe + Heaps + HashLink). Sin Flash, sin navegador y ",
+    "assets": [
+      {
+        "name": "galaxy55-offline.zip",
+        "size": 6087223,
+        "digest": "sha256:9ac7ec23617ca310f3cb296a80c5b3bb04a192a4a55784b7a4dcdb2b919cb870",
+        "browser_download_url": "https://github.com/Pv1E/galaxy55-offline/releases/download/v0.1/galaxy55-offline.zip"
+      }
+    ]
+  }
+]

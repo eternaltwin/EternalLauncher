@@ -8,18 +8,102 @@
     "account": "Compte",
     "settings": "Réglages"
   },
+  "common": {
+    "refresh": "Actualiser"
+  },
   "games": {
     "title": "Jeux",
-    "empty": "La liste des jeux arrive bientôt."
+    "empty": "Aucun jeu dans le catalogue.",
+    "loading": "Chargement du catalogue…",
+    "offline": "La liste des jeux n’a pas pu être récupérée en ligne : celle affichée peut ne pas être à jour.",
+    "unavailable": "Pas encore disponible sur ce système",
+    "updateAvailable": "Mise à jour disponible"
+  },
+  "game": {
+    "back": "Tous les jeux",
+    "versions": "Versions",
+    "loadingVersions": "Recherche des versions…",
+    "noVersions": "Aucune version disponible pour ce système.",
+    "latest": "Dernière",
+    "prerelease": "Préversion",
+    "published": "Publiée le {date}",
+    "notes": "Notes de version",
+    "noNotes": "Pas de notes pour cette version.",
+    "source": "Voir sur GitHub",
+    "install": "Installer",
+    "installed": "Installée",
+    "downloading": "Téléchargement… {percent} %",
+    "extracting": "Installation…",
+    "cancel": "Annuler",
+    "play": "Jouer",
+    "playWith": "Jouer ({variant})",
+    "playVersion": "Jouer à la {version}",
+    "installVersion": "Installer la {version}",
+    "running": "Jeu en cours…",
+    "folder": "Dossier",
+    "remove": "Désinstaller",
+    "confirmRemove": "Confirmer ?",
+    "downgradeTitle": "La {version} est plus ancienne que la dernière version jouée ({lastPlayed}).",
+    "downgradeText": "Les sauvegardes faites avec une version plus récente risquent de ne pas fonctionner ici : pensez à les copier avant.",
+    "playAnyway": "Jouer quand même",
+    "openSaves": "Sauvegardes",
+    "updateAvailable": "Nouvelle version disponible : {version}",
+    "update": "Mettre à jour"
   },
   "account": {
     "title": "Compte",
     "signedOut": "Vous n’êtes pas connecté.",
-    "soon": "La connexion à un compte EternalTwin arrive bientôt. Elle restera facultative."
+    "soon": "La connexion à un compte EternalTwin arrive bientôt."
   },
   "settings": {
     "title": "Réglages",
     "language": "Langue",
-    "systemLanguage": "Langue du système"
+    "systemLanguage": "Langue du système",
+    "gamesLayout": "Affichage des jeux",
+    "layoutList": "En lignes",
+    "layoutGrid": "En grille",
+    "alternatives": "Afficher les lancements alternatifs",
+    "alternativesHelp": "Ajoute par exemple « Jouer (DirectX) » à Galaxy 55 : à n’utiliser que si le jeu ne s’ouvre pas avec « Jouer ».",
+    "updates": "Mises à jour du launcher",
+    "checkAtStartup": "Rechercher les mises à jour au démarrage",
+    "checkNow": "Rechercher une mise à jour",
+    "checking": "Recherche en cours…",
+    "upToDate": "EternalLauncher est à jour.",
+    "updateFound": "La version {version} est disponible : utilisez le bandeau en haut de la fenêtre.",
+    "updateError": "Impossible de vérifier les mises à jour pour l’instant."
+  },
+  "errors": {
+    "generic": "Une erreur est survenue.",
+    "network": "Impossible de joindre le serveur. Vérifiez votre connexion.",
+    "rateLimited": "GitHub limite le nombre de demandes. Réessayez après {time}.",
+    "rateLimitedSoon": "GitHub limite le nombre de demandes. Réessayez dans quelques minutes.",
+    "github": "GitHub a répondu de façon inattendue. Réessayez plus tard.",
+    "unknownGame": "Ce jeu n’est pas dans le catalogue.",
+    "unknownVersion": "Cette version n’est plus proposée.",
+    "unavailable": "Ce jeu n’existe pas pour ce système.",
+    "missingDigest": "GitHub ne donne pas l’empreinte de ce fichier : impossible de vérifier le téléchargement, il est refusé.",
+    "digestMismatch": "Le fichier téléchargé ne correspond pas à celui publié : il a été supprimé. Réessayez.",
+    "badArchive": "L’archive de cette version est invalide ou dangereuse : elle a été refusée.",
+    "busy": "Cette version est déjà installée ou en cours d’installation.",
+    "notInstalled": "Cette version n’est pas installée.",
+    "runtimeMissing": "{runtime} {min} ou plus récent est nécessaire pour lancer ce jeu sur ce système. Installez-le (sur macOS : brew install hashlink), puis réessayez.",
+    "runtimeTooOld": "{runtime} {found} est trop ancien : il faut la version {min} ou plus récente.",
+    "alreadyRunning": "Le jeu est déjà lancé.",
+    "launch": "Impossible de lancer le jeu.",
+    "noSaves": "Pas encore de sauvegarde pour ce jeu.",
+    "io": "Erreur d’accès aux fichiers."
+  },
+  "variants": {
+    "directx": "DirectX"
+  },
+  "variantsHelp": {
+    "directx": "Même jeu, autre moteur graphique : à utiliser si le jeu ne s’ouvre pas (PC sans OpenGL 3.2, machine virtuelle)."
+  },
+  "launcherUpdate": {
+    "available": "EternalLauncher {version} est disponible.",
+    "install": "Installer et redémarrer",
+    "notes": "Notes de version",
+    "later": "Plus tard",
+    "downloading": "Téléchargement de la mise à jour… {percent} %"
   }
 }

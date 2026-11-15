@@ -32,7 +32,7 @@ pnpm install          # dépendances
 pnpm tauri dev        # lance le launcher en mode développement
 pnpm test             # tests de l'interface
 pnpm typecheck        # vérification des types
-pnpm tauri build      # installeurs pour le système courant
+pnpm build:unsigned   # installeurs pour le système courant, sans clé de signature
 ```
 
 À chaque pull request, la CI compile le launcher pour Windows, Linux et macOS. Elle joint les installeurs, non signés, à l'exécution correspondante de l'onglet *Actions* pendant 7 jours.
