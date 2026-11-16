@@ -1,8 +1,8 @@
 use crate::catalog::model::Source;
 use crate::error::AppError;
 use crate::install::download::{Expected, download};
-use crate::install::extract::extract;
 use crate::install::paths::GamePaths;
+use crate::install::place::{place, remove};
 use crate::install::registry::{self, InstalledVersion};
 use crate::jobs::install_key;
 use crate::launch::saves::saves_dir;
@@ -57,6 +57,9 @@ pub async fn install_version(
 ) -> Result<InstalledVersion, AppError> {
     let (game, spec) = state.game_for_platform(&id).await?;
     let paths = GamePaths::new(&state.install_root, &game.id);
+    // Le verrou avant toute vérification : deux demandes pour la même version ne peuvent pas
+    // la trouver toutes les deux « pas installée ».
+    let guard = state.jobs.start_install(install_key(&game.id, &tag))?;
     if registry::is_installed(&paths, &tag)? {
         return Err(AppError::Busy);
     }
@@ -83,7 +86,6 @@ pub async fn install_version(
         return Err(AppError::UnknownVersion(tag));
     }
 
-    let guard = state.jobs.start_install(install_key(&game.id, &tag))?;
     let partial = paths.download(&tag)?;
     let total = version.asset.size;
     let emit = |phase, received| {
@@ -118,8 +120,6 @@ pub async fn install_version(
     .await?;
 
     emit("extract", total);
-    let temp = paths.temp(&tag)?;
-    let target = paths.version(&tag)?;
     let installed = InstalledVersion {
         tag: tag.clone(),
         version: version.version.clone(),
@@ -130,22 +130,12 @@ pub async fn install_version(
             .map_or(0, |d| d.as_secs()),
     };
     let result = {
-        let (partial, temp, target, installed) =
-            (partial.clone(), temp.clone(), target, installed.clone());
-        tauri::async_runtime::spawn_blocking(move || {
-            let _ = std::fs::remove_dir_all(&temp);
-            extract(&partial, &temp)?;
-            registry::write_marker(&temp, &installed)?;
-            std::fs::rename(&temp, &target)?;
-            Ok::<(), AppError>(())
-        })
-        .await
-        .map_err(|e| AppError::Io(e.to_string()))?
+        let (paths, partial, installed) = (paths.clone(), partial.clone(), installed.clone());
+        tauri::async_runtime::spawn_blocking(move || place(&paths, &partial, &installed))
+            .await
+            .map_err(|e| AppError::Io(e.to_string()))?
     };
     let _ = std::fs::remove_file(&partial);
-    if result.is_err() {
-        let _ = std::fs::remove_dir_all(&temp);
-    }
     result?;
     emit("done", total);
     Ok(installed)
@@ -166,5 +156,5 @@ pub async fn uninstall_version(
     if state.jobs.is_running(&game.id) {
         return Err(AppError::AlreadyRunning);
     }
-    registry::remove(&GamePaths::new(&state.install_root, &game.id), &tag)
+    remove(&GamePaths::new(&state.install_root, &game.id), &tag)
 }

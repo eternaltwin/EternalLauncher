@@ -1,5 +1,6 @@
 use crate::error::AppError;
 use sha2::{Digest, Sha256};
+use std::fs::File;
 use std::io::Write;
 use std::path::Path;
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -20,6 +21,9 @@ pub async fn download(
     cancel: &AtomicBool,
     mut progress: impl FnMut(u64),
 ) -> Result<(), AppError> {
+    if !is_sha256(expected.sha256) {
+        return Err(AppError::MissingDigest);
+    }
     if let Some(parent) = dest.parent() {
         std::fs::create_dir_all(parent)?;
     }
@@ -38,30 +42,70 @@ async fn fetch(
     progress: &mut impl FnMut(u64),
 ) -> Result<(), AppError> {
     let mut response = http.get(expected.url).send().await?.error_for_status()?;
-    let mut file = std::fs::File::create(dest)?;
-    let mut hasher = Sha256::new();
-    let mut received: u64 = 0;
+    // Une taille annoncée différente : inutile de télécharger pour le constater.
+    if response
+        .content_length()
+        .is_some_and(|length| length != expected.size)
+    {
+        return Err(AppError::DigestMismatch);
+    }
+    let mut sink = Sink::create(dest, expected)?;
     while let Some(chunk) = response.chunk().await? {
+        progress(sink.write(&chunk, cancel)?);
+    }
+    sink.finish()
+}
+
+/// Le fichier en cours d'écriture : jamais plus d'octets que la taille annoncée, l'annulation
+/// prise en compte à chaque morceau, et l'empreinte comparée à la fin.
+pub struct Sink<'a> {
+    file: File,
+    hasher: Sha256,
+    received: u64,
+    expected: &'a Expected<'a>,
+}
+
+impl<'a> Sink<'a> {
+    pub fn create(dest: &Path, expected: &'a Expected<'a>) -> Result<Self, AppError> {
+        Ok(Self {
+            file: File::create(dest)?,
+            hasher: Sha256::new(),
+            received: 0,
+            expected,
+        })
+    }
+
+    /// Ajoute un morceau ; renvoie le nombre d'octets reçus jusque-là.
+    pub fn write(&mut self, chunk: &[u8], cancel: &AtomicBool) -> Result<u64, AppError> {
         if cancel.load(Ordering::Relaxed) {
             return Err(AppError::Cancelled);
         }
-        received += chunk.len() as u64;
-        if received > expected.size {
+        self.received += chunk.len() as u64;
+        if self.received > self.expected.size {
             return Err(AppError::DigestMismatch);
         }
-        hasher.update(&chunk);
-        file.write_all(&chunk)?;
-        progress(received);
+        self.hasher.update(chunk);
+        self.file.write_all(chunk)?;
+        Ok(self.received)
     }
-    file.sync_all()?;
-    if received != expected.size || !same_digest(&hex(&hasher.finalize()), expected.sha256) {
-        return Err(AppError::DigestMismatch);
+
+    pub fn finish(self) -> Result<(), AppError> {
+        self.file.sync_all()?;
+        let digest = hex(&self.hasher.finalize());
+        if self.received != self.expected.size || !same_digest(&digest, self.expected.sha256) {
+            return Err(AppError::DigestMismatch);
+        }
+        Ok(())
     }
-    Ok(())
 }
 
 pub fn hex(bytes: &[u8]) -> String {
     bytes.iter().map(|byte| format!("{byte:02x}")).collect()
+}
+
+/// Une empreinte sha256 : 64 chiffres hexadécimaux.
+fn is_sha256(text: &str) -> bool {
+    text.len() == 64 && text.chars().all(|c| c.is_ascii_hexdigit())
 }
 
 fn same_digest(computed: &str, expected: &str) -> bool {
@@ -69,21 +113,5 @@ fn same_digest(computed: &str, expected: &str) -> bool {
 }
 
 #[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn ecrit_l_empreinte_en_hexadecimal() {
-        let digest = Sha256::digest(b"abc");
-        assert_eq!(
-            hex(&digest),
-            "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
-        );
-    }
-
-    #[test]
-    fn compare_les_empreintes_sans_tenir_compte_de_la_casse() {
-        assert!(same_digest("abcd", "ABCD"));
-        assert!(!same_digest("abcd", "abce"));
-    }
-}
+#[path = "download_tests.rs"]
+mod tests;
