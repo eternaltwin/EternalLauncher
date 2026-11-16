@@ -12,6 +12,7 @@
     "windows": [
       {
         "label": "main",
+        "create": false,
         "title": "EternalLauncher",
         "width": 1100,
         "height": 700,
@@ -23,7 +24,7 @@
       }
     ],
     "security": {
-      "csp": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; connect-src ipc: http://ipc.localhost",
+      "csp": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; connect-src ipc: http://ipc.localhost; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'",
       "freezePrototype": true
     }
   },
@@ -75,6 +76,7 @@
       "endpoints": [
         "https://github.com/eternaltwin/EternalLauncher/releases/latest/download/latest.json"
       ],
+      "requireSignedVersion": true,
       "windows": {
         "installMode": "passive"
       }

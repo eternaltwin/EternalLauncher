@@ -41,15 +41,6 @@ pub fn is_installed(paths: &GamePaths, tag: &str) -> Result<bool, AppError> {
     Ok(paths.version(tag)?.join(MARKER).is_file())
 }
 
-/// Supprime une version installée, et seulement elle.
-pub fn remove(paths: &GamePaths, tag: &str) -> Result<(), AppError> {
-    if !is_installed(paths, tag)? {
-        return Err(AppError::NotInstalled);
-    }
-    std::fs::remove_dir_all(paths.version(tag)?)?;
-    Ok(())
-}
-
 pub fn last_played(paths: &GamePaths) -> Option<String> {
     let tag = std::fs::read_to_string(paths.last_played()).ok()?;
     safe_tag(tag.trim()).ok().map(str::to_string)
@@ -61,7 +52,7 @@ pub fn set_last_played(paths: &GamePaths, tag: &str) -> Result<(), AppError> {
 }
 
 #[cfg(test)]
-mod tests {
+pub mod tests {
     use super::*;
 
     fn temp_root(name: &str) -> std::path::PathBuf {
@@ -70,7 +61,7 @@ mod tests {
         root
     }
 
-    fn installed(tag: &str) -> InstalledVersion {
+    pub fn installed(tag: &str) -> InstalledVersion {
         InstalledVersion {
             tag: tag.to_string(),
             version: tag.trim_start_matches('v').to_string(),
@@ -90,12 +81,8 @@ mod tests {
         std::fs::create_dir_all(paths.version("v0.9").unwrap()).unwrap();
         std::fs::create_dir_all(paths.temp("v1.1").unwrap()).unwrap();
         assert_eq!(list_installed(&paths), vec![installed("v1.0")]);
-        remove(&paths, "v1.0").unwrap();
-        assert!(list_installed(&paths).is_empty());
-        assert!(matches!(
-            remove(&paths, "v0.9"),
-            Err(AppError::NotInstalled)
-        ));
+        assert!(is_installed(&paths, "v1.0").unwrap());
+        assert!(!is_installed(&paths, "v0.9").unwrap());
         std::fs::remove_dir_all(&root).unwrap();
     }
 

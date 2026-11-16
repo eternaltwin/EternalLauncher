@@ -7,8 +7,9 @@ on:
   push:
     tags: ["v*"]
 
+# Lecture seule par défaut : seul le job qui publie le brouillon peut écrire.
 permissions:
-  contents: write
+  contents: read
 
 env:
   LINUX_DEPS: libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
@@ -19,6 +20,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
       - name: Le tag correspond à la version du launcher
         run: |
           expected="v$(node -p "require('./package.json').version")"
@@ -26,10 +30,20 @@ jobs:
             echo "Le tag $GITHUB_REF_NAME ne correspond pas à package.json ($expected)." >&2
             exit 1
           fi
+      - name: Le tag pointe sur un commit de main
+        run: |
+          if ! git merge-base --is-ancestor "${GITHUB_SHA}^{commit}" origin/main; then
+            echo "Le tag $GITHUB_REF_NAME ne pointe pas sur un commit de main." >&2
+            exit 1
+          fi
 
   release:
     name: Release (${{ matrix.name }})
     needs: check-version
+    # Les secrets de signature sont dans cet environnement.
+    environment: release
+    permissions:
+      contents: write
     strategy:
       fail-fast: false
       matrix:
@@ -47,8 +61,11 @@ jobs:
             os: macos-latest
             args: --target x86_64-apple-darwin
     runs-on: ${{ matrix.os }}
+    # Pas de cache : une compilation propre avant la signature.
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Dépendances système de Tauri
         if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y $LINUX_DEPS
@@ -56,14 +73,10 @@ jobs:
         with:
           toolchain: stable
           targets: ${{ runner.os == 'macOS' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
-      - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
-        with:
-          workspaces: src-tauri
       - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 24
-          cache: pnpm
       - run: pnpm install --frozen-lockfile
       - uses: tauri-apps/tauri-action@1deb371b0cd8bd54025b384f1cd735e725c4060f # v1.0.0
         env:

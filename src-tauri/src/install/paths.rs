@@ -21,7 +21,8 @@ pub fn safe_tag(tag: &str) -> Result<&str, AppError> {
 }
 
 /// Dossiers d'un jeu : `<racine>/<id>/<tag>/` pour chaque version installée, et des dossiers
-/// cachés (`.downloads`, `.tmp-<tag>`) pour le travail en cours.
+/// cachés (`.downloads`, `.tmp-<tag>`, `.trash-<tag>`) pour le travail en cours.
+#[derive(Clone)]
 pub struct GamePaths {
     dir: PathBuf,
 }
@@ -44,6 +45,11 @@ impl GamePaths {
 
     pub fn temp(&self, tag: &str) -> Result<PathBuf, AppError> {
         Ok(self.dir.join(format!(".tmp-{}", safe_tag(tag)?)))
+    }
+
+    /// Une version en cours de suppression : renommée d'abord, effacée ensuite.
+    pub fn trash(&self, tag: &str) -> Result<PathBuf, AppError> {
+        Ok(self.dir.join(format!(".trash-{}", safe_tag(tag)?)))
     }
 
     pub fn download(&self, tag: &str) -> Result<PathBuf, AppError> {
@@ -83,5 +89,6 @@ mod tests {
             Path::new("racine").join("galaxy55").join("v0.8")
         );
         assert!(paths.temp("../x").is_err());
+        assert!(paths.trash("../x").is_err());
     }
 }

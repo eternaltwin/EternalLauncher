@@ -66,6 +66,13 @@ fn check_game(game: &Game) -> Result<(), String> {
     if !is_slug(&game.id) {
         return Err(format!("id invalide : {}", game.id));
     }
+    if game
+        .min_launcher
+        .as_deref()
+        .is_some_and(|v| parse_version(v).is_none())
+    {
+        return Err(format!("{}: minLauncher illisible", game.id));
+    }
     for (field, text) in [("name", &game.name), ("description", &game.description)] {
         if text.is_empty() || text.values().any(|value| value.trim().is_empty()) {
             return Err(format!("{}: {field} vide", game.id));

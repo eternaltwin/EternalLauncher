@@ -4,6 +4,16 @@ Toutes les évolutions notables d'EternalLauncher. Le format suit [Keep a Change
 
 ## [Non publié]
 
+### Sécurité
+
+- Une mise à jour du launcher doit être signée pour sa propre version.
+- La fenêtre du launcher n'affiche plus que sa propre interface : un lien ouvert dans une nouvelle fenêtre part dans le navigateur.
+
+### Corrigé
+
+- Un téléchargement ne s'interrompt plus au bout de 30 secondes sur une connexion lente.
+- Supprimer une version dont un fichier est encore ouvert la laisse entière au lieu de la laisser à moitié effacée, et le reste d'une suppression interrompue n'empêche plus de la réinstaller.
+
 ## [0.1.0] - 2026-11-14
 
 Première version.

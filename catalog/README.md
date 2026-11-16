@@ -12,7 +12,7 @@ Le format est décrit par [`schema.json`](schema.json). Les tests Rust (`cargo t
 | `kind` | `native` : le jeu se télécharge depuis ses releases GitHub, puis se lance. |
 | `name`, `description` | Textes par langue : `fr`, `en`, `es`, `de`, `pt-BR`. Il en faut au moins une ; à défaut, le launcher prend l'anglais, puis le français. |
 | `icon` | Icône carrée dans `icons/` (PNG, JPG, WebP ou SVG, 512 Ko au plus). |
-| `minLauncher` | Facultatif : un launcher plus ancien ignore l'entrée. |
+| `minLauncher` | Facultatif : un launcher plus ancien ignore l'entrée. Doit être un numéro de version lisible (`0.2`, `1.0.3`). |
 | `source.repo` | Dépôt GitHub du jeu, `propriétaire/nom`. |
 | `source.minVersion` | Facultatif : les versions plus anciennes ne sont pas proposées. |
 | `source.prereleases` | `true` pour proposer aussi les releases marquées *pre-release*. |

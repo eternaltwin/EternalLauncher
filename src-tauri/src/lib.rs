@@ -9,6 +9,10 @@ mod launch;
 mod platform;
 mod state;
 mod version;
+mod window;
+
+#[cfg(test)]
+mod config_tests;
 
 use tauri::Manager;
 
@@ -34,6 +38,7 @@ pub fn run() {
                 paths.home_dir()?,
             )?;
             app.manage(state);
+            window::create_main(app)?;
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![

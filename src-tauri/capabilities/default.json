@@ -1,14 +1,24 @@
 {
   "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "default",
-  "description": "Permissions de la fenêtre principale : le strict nécessaire.",
+  "description": "Permissions de la fenêtre principale : seulement ce que l'interface appelle.",
   "windows": [
     "main"
   ],
   "permissions": [
-    "core:default",
-    "opener:default",
-    "updater:default",
+    "core:app:allow-version",
+    "core:event:allow-listen",
+    "core:event:allow-unlisten",
+    {
+      "identifier": "opener:allow-open-url",
+      "allow": [
+        {
+          "url": "https://*"
+        }
+      ]
+    },
+    "updater:allow-check",
+    "updater:allow-download-and-install",
     "process:allow-restart"
   ]
 }

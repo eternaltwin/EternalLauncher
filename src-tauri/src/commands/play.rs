@@ -22,7 +22,13 @@ pub async fn launch_game(
     if !registry::is_installed(&paths, &tag)? {
         return Err(AppError::NotInstalled);
     }
-    let command = LaunchCommand::build(&spec, &paths.version(&tag)?, variant.as_deref())?;
+    // Chercher HashLink lance `hl --version` : pas sur un fil de la boucle asynchrone.
+    let version_dir = paths.version(&tag)?;
+    let command = tauri::async_runtime::spawn_blocking(move || {
+        LaunchCommand::build(&spec, &version_dir, variant.as_deref())
+    })
+    .await
+    .map_err(|e| AppError::Launch(e.to_string()))??;
     state.jobs.start_game(&game.id)?;
     let mut child = match command.spawn() {
         Ok(child) => child,
