@@ -90,6 +90,7 @@ fn refuse_les_chemins_et_depots_dangereux() {
         json!({ "saves": { "windows": "C:/Windows" } }),
         json!({ "platforms": { "beos-x86_64": { "asset": "{tag}.zip", "program": "jeu.exe" } } }),
         json!({ "name": { "klingon": "Jeu" } }),
+        json!({ "minLauncher": "bientôt" }),
     ] {
         let text = catalog(vec![game(bad.clone())]);
         assert!(parse_strict(&text).is_err(), "{bad}");
