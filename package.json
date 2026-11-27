@@ -22,19 +22,19 @@
     "@tauri-apps/plugin-updater": "^2.14.1",
     "markdown-it": "^15.0.3",
     "vue": "^3.5.13",
-    "vue-i18n": "^11.4.19",
-    "vue-router": "^5.5.0"
+    "vue-i18n": "^11.4.23",
+    "vue-router": "^5.5.1"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2",
     "@types/markdown-it": "^14.2.0",
     "@types/node": "^26.6.6",
     "@vitejs/plugin-vue": "^6.0.7",
-    "@vue/test-utils": "^2.5.1",
-    "jsdom": "^31.0.0",
+    "@vue/test-utils": "^2.6.0",
+    "jsdom": "^31.0.1",
     "typescript": "~6.0.3",
     "vite": "^8.0.16",
-    "vitest": "^5.1.0",
+    "vitest": "^5.1.1",
     "vue-tsc": "^3.3.5"
   }
 }
